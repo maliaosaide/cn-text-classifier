@@ -4,15 +4,16 @@ K-means-Single-Test
 """
 
 from sklearn.cluster import KMeans
-from tools.preprocess import *
-from tools.visualizer import plot_result
+from preprocess import *
+from visualizer import plot_result
 from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import PCA, TruncatedSVD
-from tools.labelText import LabelText
+from labelText import LabelText
 import settings
 import time
 import pandas as pd
 from sklearn import metrics
+from preprocess import loading_source
 
 """
 loading source
