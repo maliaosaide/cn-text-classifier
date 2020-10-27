@@ -62,6 +62,7 @@ CHI: 366.856356
 Estimated number of noise points: 102 
 ------End------
 ```
+**补充 Sing-Pass 聚类实验**
 
 >内师大文本数据挖掘————聚类分析实验
 
