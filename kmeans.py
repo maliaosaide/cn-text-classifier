@@ -99,7 +99,7 @@ labels_true = content.flag.to_list()
 ars = metrics.adjusted_rand_score(labels_true, label)
 print("adjusted_rand_score: ", ars)
 
-fmi = metrics.adjusted_rand_score(labels_true, label)
+fmi = metrics.adjusted_mutual_info_score(labels_true, label)
 print("FMI: ", fmi)
 
 silhouette = metrics.silhouette_score(trainingData, label)

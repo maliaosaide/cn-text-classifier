@@ -1,0 +1,6 @@
+-------Birch Experiment-------
+adjusted_rand_score: 0.984727
+FMI: 0.972753
+Silhouette: 0.392115
+ CHI: 607.003290
+------End------

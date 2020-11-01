@@ -4,15 +4,16 @@ DBSCAN
 """
 
 from sklearn.cluster import DBSCAN
-from tools.preprocess import *
+from preprocess import loading_source
 from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
 from sklearn.decomposition import PCA
-from tools.labelText import LabelText
+from labelText import LabelText
 import settings
 import time
 import pandas as pd
 from sklearn import metrics
 import matplotlib.pyplot as plt
+import numpy as np
 
 """
 loading source
@@ -122,7 +123,7 @@ labels_true = content.flag.to_list()
 ars = metrics.adjusted_rand_score(labels_true, label)
 print("adjusted_rand_score: ", ars)
 
-fmi = metrics.adjusted_rand_score(labels_true, label)
+fmi = metrics.adjusted_mutual_info_score(labels_true, label)
 print("FMI: ", fmi)
 
 silhouette = metrics.silhouette_score(trainingData, label)
@@ -132,7 +133,7 @@ CHI = metrics.calinski_harabaz_score(trainingData, label)
 print("CHI: ", CHI)
 
 
-with open(settings.DST_DATA+time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())+'result.txt', 'w') as w:
+with open(settings.DST_DATA+time.strftime("DBSCAN%Y-%m-%d %H-%M-%S", time.localtime())+'result.txt', 'w') as w:
     w.write("------DBSCAN Experiment-------\n")
     w.write("adjusted_rand_score: %f\n" % ars)
     w.write("FMI: %f\n" % fmi)
