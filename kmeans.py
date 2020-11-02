@@ -2,7 +2,6 @@
 """
 K-means-Single-Test
 """
-
 from sklearn.cluster import KMeans
 from preprocess import *
 from visualizer import plot_result
